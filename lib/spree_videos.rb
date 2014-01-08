@@ -3,10 +3,12 @@ require 'youtube_it'
 require 'spree/videos/configuration'
 
 module Spree
+  extend ActionView::Helpers::TagHelper
+
   module Videos
     class Engine < Rails::Engine
       engine_name 'spree_videos'
-      
+
       config.autoload_paths += %W(#{config.root}/lib)
 
       def self.activate
