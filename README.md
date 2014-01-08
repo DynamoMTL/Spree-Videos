@@ -16,9 +16,9 @@ There is no deface override included by default to include the videos in your pr
 
 	# products/show.html.erb
 	<%= render 'video', :product => @product %>
-	
+
 If you are using Twitter Bootstrap, you can easily add title tooltips to your video thumbnails:"
-	
+
 	# javascripts/store/your.coffeescript
 	$('#video-thumbnails > a').tooltip()
 
@@ -26,10 +26,16 @@ Installation
 ============
 
 	bundle exec rails g spree_videos:install
-	
+
 	# auto run via the install generator, but in case you didn't run it
 	bundle exec rake db:migrate
-	
+
+Testing
+=======
+
+       bundle exec rake test_app
+       bundle exec rake spec
+
 Configuration
 =============
 #### JS + HTML YouTube Parameters
@@ -42,28 +48,28 @@ By default spree_videos inserts the videos into `#product_properties` in `produc
 
 #### CSS
 You can easily customize the display of the thumbnails / player:
-	
+
 	// stylesheets/store/videos.css.less
-	
+
 	#product-videos {
-	
+
 		#video-player {
 			// player holder
 		}
-	
+
 		#video-thumbnails {
 			// thumbnail holder
-	
+
 			a {
-				// thumbnails 
-	
+				// thumbnails
+
 				display: block;
 				float: left;
-	
+
 				&:hover { }
-				
+
 				&:first-child { }
-				
+
 				&:last-child { }
 			}
 		}
